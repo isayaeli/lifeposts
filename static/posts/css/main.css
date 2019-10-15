@@ -1,0 +1,1426 @@
+body{
+    padding: 0;
+    margin:0;
+    font-family: Tahoma;
+}
+
+.nav-bar{
+        background-color:#075e54;
+        width: 15%;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        margin: 0;
+        padding: 0;
+        display: none;
+        
+}
+.nav-bar img{
+        height: 40px;
+        width: 40px;
+        margin-top:8px;
+        border-radius: 3px;
+        margin-left: 10px;
+
+}
+.nav-bar ul{
+    margin: 0;
+    padding: 0;
+}
+.nav-bar ul li{
+       margin: 0;
+       list-style: none;
+       margin-top: 30px;
+       text-align: center;
+}
+.nav-bar ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+}
+.nav-bar ul li a span:nth-child(1){
+    font-size: 20px;
+}
+.nav-bar ul li a span:nth-child(2){
+        display: none;
+}
+.nav-bar form{
+    display: none;
+}
+
+.title{
+    background: #075e54;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    display: inline-flex;
+    z-index: 2;
+}
+.title img{
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.title form{
+    display: inline-flex;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.title form input{
+    width:170px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+.title button{
+    margin-left: 10px;
+    height: 30px;
+    background-color: teal;
+}
+.title ul{
+    margin-top: 10px;
+}
+.title ul li{
+    display: inline-flex;
+}
+.title ul li a span{
+    margin-left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.aside{
+    display: none;
+}
+.feed{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+    
+   
+
+}
+.post{
+        height: 80px;
+       
+    }
+ .add-post{
+        display: inline-flex;
+        
+}
+.add-post a{
+    font-size: 20px;
+    color: slategrey;
+    display: inline-flex;
+}
+.add a{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.anchor a{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.who-added-post{
+        margin-top: 40px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        font-size: 15px;
+
+        
+    }
+    .who-added-post p{
+        margin-left: 20px;
+    }
+    .post-contents{
+        display: inline-flex;
+        margin-left: 10px;
+    }
+    .post-contents img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 70px;
+        width: 70px;
+        margin-right:-25px;
+    }
+    .post-contents ul li{
+        list-style: none;
+    }
+    .post-contents ul li a{
+        text-decoration: none;
+        font-size: 15px;
+    }
+    .the-post ul li{
+        display: inline-flex;
+        list-style: none;
+        margin: 10px;
+        
+    }
+    .the-post ul li a{
+        text-decoration: none; 
+    }
+    .the-post img{
+        height: 200px;
+        width: 378px;
+    }
+    video{
+        height: 200px;
+        width:378px;
+    }
+    .comments{
+        display: inline-flex;
+    }
+    .comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comments form{
+        margin-left: 10px;
+        margin-top: 3px;
+        display: flex;
+    }
+    .comments input{
+        width: 200px;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid gray
+    }
+    .comments button{
+        margin-left: 10px;
+    }
+    .comment-by{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: inline-flex;
+    
+    }
+    .comment-by p{
+        background: lightgrey;
+        margin-left: 30px;
+        margin-right: 25px;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    .comment-by img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comment-by ul li{
+        margin-right: 20px;
+    }
+    .ads{
+        display: none;
+    }
+    footer{
+        background-color: #075e54;
+        height: 50px;
+    }
+    footer ul{
+        margin: 0;
+        padding: 0;
+    }
+    footer ul li{
+        margin: 10px 0px 0px 55px; 
+        display: inline-flex;
+        text-align: center;
+        list-style: none;
+    }
+    footer ul li a{
+        color:white;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    footer  ul li a span:nth-child(1){
+        color: white;
+    }
+    footer  ul li a span:nth-child(2){
+        display: flex;
+        font-size: 12px;
+        color: white;
+        text-decoration: none;
+    }
+    .blockquote{
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        border-radius:3px;
+        margin-right: 50px;
+        margin-top: -50px;
+    }
+    .blockquote1{
+        margin-left: 40px;
+    }
+    .col-img{
+        margin-top: 20px;
+    }
+    .blockquote p{
+        font-size:15px;
+    }
+    .list-comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+   
+    .comment-forms label{
+        font-weight:900;
+    }
+    .comment-forms input{
+        width: 365px;
+        border: 1px solid rgb(32, 32, 32);
+    }
+    .comment-forms button{
+        margin-left: 0px;
+        width: 73%;
+    }
+     .loginForm{
+        margin:100px 10px 0px 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        padding:20px 0px 20px 0px
+    }
+    .phone{
+        margin:30px 10px 0px 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        padding:20px 0px 20px 0px
+    }
+    .loginForm h3{
+        text-align: center;
+    }
+    .loginForm form{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+    #notify{
+        margin-left: 40px;
+        width: 82%;
+        margin-right: 20px;
+    }
+    .loginForm label{
+        font-weight: 900;
+    }
+    .check{
+        margin-left: 5px;
+    }
+    .loginForm a{
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    #login-nav h1{
+        margin-left: 300px;
+        color:white;
+        font-weight: 900;
+    }
+    .go-register{
+         background-color: aliceblue;
+         margin-top: 20px;
+    }
+    .go-register h6{
+        margin-left: 10%;
+        font-size: 15px;
+    }
+    .go-register a{
+        margin-left: 0;
+    }
+   
+    .reset-pwd{
+        padding-top: 100px;
+        margin-left: 15%;
+        margin-right: 10%;
+    }
+    .reset-pwd label{
+        display: block;
+    }
+    .reset-pwd input{
+        width: 300px;
+    }
+    .reset-pwd ul{
+        color: red;
+        list-style: none;
+        background-color:#f7cac8;
+        width: 30%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #f7cac8;
+    }
+    .reset-pwd ul li{
+        text-align: start;
+        line-height: 40px;
+    }
+    .confirm-pwd{
+        padding-top: 50px;
+        margin-left: 15%;
+    }
+    .confirm-pwd label{
+        display: block;
+    }
+    .confirm-pwd ul li{
+        color: red;
+    }
+    .confirm-pwd-not-valid{
+        padding-top: 100px;
+        margin-left: 0%;
+    }
+    .confirm-pwd-not-valid a{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .info{
+        width: 100%;
+    }
+     .inner-login-side{
+        margin-top: 20px;
+    }
+    .inner-login-side h2{
+        margin-top: 20px;
+        margin-left: 10%;
+        font-size: 20px;
+        color: black;
+    }
+    .inner-login-side span{
+        color: green;
+    }
+     .privacy{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10%;
+        margin-right: 20%;
+        background-color: cadetblue;
+    }
+    .privacy a{
+        margin-top: 90px;
+        margin-left: 2%;
+        text-decoration: none;
+        color: blue;
+    }
+    
+/* this is for tableeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet*/
+@media screen and (min-width:600px){
+
+    .nav-bar{
+        background-color: teal;
+        display: inline-flex;
+        width: 100%;
+        height: 55px;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .nav-container{
+        margin-left: 50px;
+        display: inline-flex;
+        width: 100%;
+    }
+    .nav-bar img{
+        height: 40px;
+        width: 40px;
+        margin-top:8px;
+        border-radius: 3px;
+
+    }
+    .nav-bar ul .search{
+        display: none;
+    }
+    .nav-bar form{
+    margin-top: 13px; 
+    margin-left: 15px;
+    display: inline-flex;
+    }
+    .nav-bar ul{
+        margin-left: 80px;
+    }
+    .nav-bar ul li{
+        display: inline-flex;
+        margin:10px 0px 0px 25px;
+    }
+    .nav-bar ul li a{
+        text-decoration: none;
+        color: white;
+
+    }
+    .nav-bar ul li a span{
+        display: block;
+    }
+    .nav-bar ul li a span:nth-child(1){
+        font-size: 20px;
+        text-align: center
+    }
+    .nav-bar ul li a span:nth-child(2){
+        display: flex;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+    ul #logout{
+        margin-left: 50px;
+    }
+
+.title{
+    background: slategrey;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    display: none;
+    z-index: 2;
+}
+.title img{
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.title form{
+    display: none;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.title form input{
+    width:170px;
+    margin-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+.title button{
+    margin-left: 10px;
+    height: 30px;
+}
+.title ul{
+    margin-top: 10px;
+    display: none;
+   
+}
+.title ul li{
+    display: inline-flex;
+}
+.title ul li a span{
+    margin-left: 15px;
+    color: white;
+    font-size: 20px;
+}
+.aside{
+        /* border: 1px solid gray; */
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        margin-top: 80px;
+        margin-left: -100px;
+        width:250px;
+        height: 300px;
+        position: fixed;
+        display: block;
+    }
+
+    .green-color{
+        background-color:teal;
+        height: 50px;
+        margin-right: 50px;
+        width:250px;
+
+    }
+
+    .profile-img{
+        text-align: center;
+        
+    }
+    .profile-img img{
+        text-align: center;
+        margin-right: 10px;
+        margin-top: 20px;
+        z-index: 1;
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 60px;
+        width: 60px;
+    }
+    .username{
+        margin-top: 60px;
+        text-align: center;
+        font-size: 13px;
+    }
+    .groups{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .groups a:nth-child(2){
+        float: right;
+        margin-right: 10px;
+    }
+    .friends{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .friends a:nth-child(2){
+        float: right;
+        margin-right: 10px;
+    }
+    .more{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .feed{
+    margin-top: 70px;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+
+   }
+.post{
+        height: 80px;
+       
+    }
+ .add-post{
+        display: inline-flex;
+        
+}
+.add-post a{
+    font-size: 20px;
+    color: slategrey;
+    display: inline-flex;
+}
+.add a{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.anchor a{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.who-added-post{
+        margin-top: 60px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        font-size: 15px;
+
+        
+    }
+    .who-added-post p{
+        margin-left: 20px;
+    }
+    .post-contents{
+        display: inline-flex;
+        margin-left: 10px;
+    }
+    .post-contents img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 70px;
+        width: 70px;
+        margin-right:-25px;
+    }
+    .post-contents ul li{
+        list-style: none;
+        color: teal;
+    }
+    .post-contents ul li a{
+        text-decoration: none;
+        font-size: 15px;
+        color: teal;
+    }
+    .the-post ul li{
+        display: inline-flex;
+        list-style: none;
+        margin: 10px;
+        color: teal;
+
+        
+    }
+    .the-post ul li a{
+        text-decoration: none; 
+        color: teal;
+    }
+    .comments{
+        display: inline-flex;
+    }
+    .comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comments form{
+        margin-left: 10px;
+        margin-top: 3px;
+        display: flex;
+    }
+    .comments input{
+        width: 160px;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid gray
+    }
+    .comments button{
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .comment-by{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: inline-flex;
+    
+    }
+    .comment-by p{
+        background: lightgrey;
+        margin-left: 30px;
+        margin-right: 25px;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    .comment-by img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comment-by ul li{
+        margin-right: 20px;
+    }
+    .ads{
+        display: block;
+    }
+     .ads{
+        margin-top: 80px;
+        position: fixed;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        display: block;
+    }
+    .ads img{
+        height: 200px;
+        width:267px;
+    }
+    .links a{
+        margin:20px;
+        font-size: 15px;
+        color:black;
+    }
+    footer{
+        display: none;
+    }
+    .blockquote{
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        border-radius:3px;
+        margin-right: 0px;
+        margin-top: 2px;
+    }
+    .blockquote1{
+        margin-top: -45px;
+    }
+    .blockquote p{
+        font-size:15px;
+    }
+    .comment-icon{
+        margin-right: 13px;
+        margin-top: 5px;
+    }
+    .iconzy{
+        margin-right: 20px;
+    }
+    .list-comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comment-forms label{
+        font-weight:900;
+    }
+    .comment-forms input{
+        width: 330px;
+        border: 1px solid rgb(32, 32, 32);
+    }
+    .comment-forms button{
+        margin-left: 0px;
+        width: 100%;
+    }
+    video{
+        height: 185px;
+        width:330px;
+    }
+    .the-post img{
+        height: 200px;
+        width: 330px;
+    }
+    .the-post form textarea{
+        width: 300px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius:2px;
+    }
+    .the-post button{
+        margin-left: 20px;
+    }
+    .the-post form label{
+        font-weight:900;
+    }
+    .loginForm{
+        margin:100px 0px 0px 100px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        padding:20px 0px 20px 0px
+    }
+    .loginForm h3{
+        text-align: center;
+    }
+    .loginForm form{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+    .loginForm label{
+        font-weight: 900;
+    }
+    .check{
+        margin-left: 10px;
+    }
+    .loginForm a{
+        margin-left: 0px;
+        font-size: 12px;
+    }
+    #notify{
+        margin-left: 40px;
+        width: 82%;
+    }
+    #login-nav h1{
+        margin-left: 300px;
+        color:white;
+        font-weight: 900;
+    }
+    .go-register{
+         background-color: aliceblue;
+         margin-top: 20px;
+    }
+    .go-register h6{
+        margin-left: 10%;
+        font-size: 15px;
+    }
+    .go-register a{
+        margin-left: 0;
+    }
+    .alert{
+        width:100%;
+        margin-left: 30%;
+    }
+    .reset-pwd{
+        padding-top: 100px;
+        margin-left: 35%;
+    }
+    .reset-pwd label{
+        display: block;
+    }
+    .reset-pwd input{
+        width: 300px;
+    }
+    .reset-pwd ul{
+        color: red;
+        list-style: none;
+        background-color:#f7cac8;
+        width: 30%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #f7cac8;
+    }
+    .reset-pwd ul li{
+        text-align: start;
+        line-height: 40px;
+    }
+    .confirm-pwd{
+        padding-top: 100px;
+        margin-left: 35%;
+    }
+    .confirm-pwd label{
+        display: block;
+    }
+    .confirm-pwd ul li{
+        color: red;
+    }
+    .confirm-pwd-not-valid{
+        padding-top: 100px;
+        margin-left: 10%;
+    }
+    .confirm-pwd-not-valid a{
+        margin-top: 20px;
+        margin-left: 258px;
+    }
+     .login-side{
+        background: white;
+        height: 100vh;
+        width: 100%;
+        
+    }
+    .inner-login-side{
+        margin-top: 100px;
+    }
+    .inner-login-side h2{
+        margin-top: 50px;
+        margin-left: 10%;
+        font-size: 20px;
+        color: black;
+    }
+    .inner-login-side span{
+        color: green;
+    }
+     .privacy{
+        margin-top: 50px;
+        margin-left: 20%;
+        margin-right: 20%;
+        background-color: cadetblue;
+    }
+    .privacy a{
+        margin-top: 90px;
+        margin-left: 2%;
+        text-decoration: none;
+        color: blue;
+    }
+    
+
+
+}
+
+/* for the desktop and above mzeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
+@media screen and (min-width:1000px){
+    .title{
+        background: slategrey;
+        height: 60px;
+        position: fixed;
+        display: none;
+    }
+    .nav-bar{
+        background-color: #075e54;
+        display: inline-flex;
+        width: 100%;
+        height: 55px;
+        position: fixed;
+        z-index: 1;
+    }
+
+    .nav-container{
+        margin-left: 250px;
+        display: inline-flex;
+        width: 100%;
+    }
+    .nav-bar img{
+        height: 40px;
+        width: 40px;
+        margin-top:8px;
+        border-radius: 3px;
+
+    }
+    .nav-bar ul .search{
+        display: none;
+    }
+    .nav-bar form{
+    margin-top: 7px; 
+    margin-left: 10px;
+    display: inline-flex;
+    }
+    .nav-bar form input{
+        border-radius:5px;
+        border: 1px solid gray;
+        width: 250px;
+        height: 40px;
+        margin-top: 0px;
+    }
+    .nav-bar form button{
+        height: 40px;
+        
+    }
+    .nav-bar ul{
+        margin-left: 80px;
+    }
+    .nav-bar ul li{
+        display: inline-flex;
+        margin:10px 0px 0px 25px;
+    }
+    .nav-bar ul li a{
+        text-decoration: none;
+        color: white;
+
+    }
+    .nav-bar ul li a span{
+        display: block;
+    }
+    .nav-bar ul li a span:nth-child(1){
+        font-size: 20px;
+        text-align: center
+    }
+    .nav-bar ul li a span:nth-child(2){
+        display: flex;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+    ul #logout{
+        margin-left: 390px;
+    }
+    .aside{
+        /* border: 1px solid gray; */
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        margin-top: 80px;
+        margin-left: 10px;
+        width:250px;
+        height: 310px;
+        float: right;
+        position: fixed;
+        display: block;
+        color: teal;
+    }
+    .aside a{
+        color: teal;
+    }
+
+    .green-color{
+        background-color:#075e54;
+        height: 50px;
+        margin-right: 50px;
+        width:250px;
+
+    }
+
+    .profile-img{
+        text-align: center;
+        
+    }
+    .profile-img img{
+        text-align: center;
+        margin-right: 10px;
+        margin-top: 20px;
+        z-index: 1;
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 60px;
+        width: 60px;
+    }
+    .username{
+        margin-top: 60px;
+        text-align: center;
+        font-size: 13px;
+    }
+    .groups{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .groups a:nth-child(2){
+        float: right;
+        margin-right: 10px;
+    }
+    .friends{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .friends a:nth-child(2){
+        float: right;
+        margin-right: 10px;
+    }
+    .more{
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .feed{
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        margin: 80px 40px 0px 0px;
+
+    }
+    .post{
+        height: 80px;
+        margin: 0;
+    }
+    .add-post{
+        display: inline-flex;
+    }
+    .add-post a{
+        font-size: 20px;
+        color: teal;
+        margin:25px;
+    }
+
+    .who-added-post{
+        margin-top: 20px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        font-size: 15px;
+    }
+    .who-added-post p{
+        margin-left: 20px;
+    }
+    .post-contents{
+        display: inline-flex;
+        margin-left: 10px;
+    }
+    .post-contents img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 70px;
+        width: 70px;
+        margin-right:-25px;
+    }
+    .post-contents ul li{
+        list-style: none;
+        color: teal;
+    }
+    .post-contents ul li a{
+        text-decoration: none;
+        font-size: 15px;
+        color: teal;
+       
+    }
+    
+    
+    .the-post ul li{
+        display: inline-flex;
+        list-style: none;
+        margin: 10px;  
+        color: teal;
+    }
+
+    .the-post ul li a{
+        text-decoration: none; 
+        color:teal;
+    }
+     .the-post img{
+        margin: 0px 0px 0px 20px;
+        height: 300px;
+        width: 460px;
+     }
+    .comments{
+        display: inline-flex;
+    }
+    .comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comments form{
+        margin-left: 20px;
+        margin-top: 3px;
+        display: inline-flex;
+    }
+    .comments input{
+        width: 300px;
+        border-radius: 20px;
+        height: 40px;
+        border: 2px solid gray;
+        margin-left: 20px;
+    }
+    .comment-by{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: inline-flex;
+    
+    }
+    .comment-by p{
+        background: lightgrey;
+        margin-left: 30px;
+        margin-right: 25px;
+        border-radius: 5px;
+        text-align: left;
+    }
+
+    .comment-by img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .comment-by ul li{
+        margin-right: 20px;
+    }
+    .ads{
+        margin-top: 80px;
+        position: fixed;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        display: block;
+        margin-left: -50px;
+    }
+    .ads img{
+        height: 200px;
+        width:267px;
+    }
+    .links a{
+        margin:20px;
+        font-size: 15px;
+        color:black;
+    }
+    .loginForm{
+        margin:100px 0px 0px 400px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        padding:20px 0px 20px 0px
+    }
+    .loginForm h3{
+        text-align: center;
+    }
+    .loginForm form{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+    .loginForm label{
+        font-weight: 900;
+    }
+    .check{
+        margin-left: 20px;
+    }
+    .loginForm a{
+        margin-left: 20px;
+    }
+    #notify{
+        margin-left: 50px;
+    }
+    #login-nav h1{
+        margin-left: 600px;
+        color:white;
+        font-weight: 900;
+    }
+    .go-register{
+         background-color: aliceblue;
+         margin-top: 20px;
+    }
+    .go-register h6{
+        margin-left: 10%;
+        font-size: 15px;
+    }
+    .go-register a{
+        margin-left: 0;
+    }
+    .alert{
+        width:80%;
+        margin-left: 10%;
+    }
+    .modal-body label{
+        font-weight: 900;
+    }
+    .reset-pwd{
+        padding-top: 100px;
+        margin-left: 35%;
+    }
+    .reset-pwd label{
+        display: block;
+    }
+    .reset-pwd input{
+        width: 300px;
+    }
+    .reset-pwd ul{
+        color: red;
+        list-style: none;
+        background-color:#f7cac8;
+        width: 30%;
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid #f7cac8;
+    }
+    .reset-pwd ul li{
+        text-align: start;
+        line-height: 40px;
+    }
+    .confirm-pwd{
+        padding-top: 100px;
+        margin-left: 35%;
+    }
+    .confirm-pwd label{
+        display: block;
+    }
+    .confirm-pwd ul li{
+        color: red;
+    }
+    .confirm-pwd-not-valid{
+        padding-top: 100px;
+        margin-left: 10%;
+    }
+    .confirm-pwd-not-valid a{
+        margin-top: 20px;
+        margin-left: 258px;
+    }
+    .profileForm{
+        margin:10px 30px 0px 30px;
+        
+        padding:10px 0px 10px 0px
+    }
+    .profileForm form{
+        width: 50%;
+        margin-top: 10px;
+    }
+    .profileForm label{
+        font-weight: 900;
+        margin-left: 0px
+    }
+    .profileForm input{
+        width: 90%;
+        margin-left: 0px;
+        text-align: start
+    }
+    .profileForm button{
+        margin-left: 20px;
+
+    }
+    .delete-buttons{
+        margin: 20px 0px 20px 20px;
+    }
+    .blockquote{
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        border-radius:3px;
+        margin-right: 90px;
+        margin-top: 55px;
+    }
+    .blockquote1{
+        margin-left:-10px;
+    }
+    .blockquote p{
+        font-size:15px;
+    }
+    .list-comments img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+        
+    }
+    .comment-forms label{
+        font-weight:900;
+    }
+    .comment-forms input{
+        width: 365px;
+        border: 1px solid rgb(32, 32, 32);
+    }
+    .comment-forms button{
+        margin-left: 0px;
+        width: 73%;
+    }
+    .icon1{
+        margin-top: 20px;
+    }
+    .online-img img{
+        border: 3px solid wheat;
+        border-radius: 50px;
+        height: 40px;
+        width: 40px;
+    }
+    .online-row{
+        overflow: scroll;
+    }
+    .changepass ul{
+        display: none;
+    }
+    video{
+        height:300px;
+        width:500px;
+    }
+    .ad {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            border: 1px solid #ddd;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 310px;
+            right: 50%;
+            z-index: 10;
+        }
+        .ad .close {
+            position: absolute;
+            font-family: 'ionicons';
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            background-color: #999;
+            font-size: 20px;
+            left: -20px;
+            top: -1px;
+            display: table-cell;
+            vertical-align: middle;
+            cursor: pointer;
+            text-align: center;
+            }
+    .login-side{
+        background: white;
+        height: 100vh;
+        width: 100%;
+        
+    }
+    .inner-login-side{
+        margin-top: 100px;
+    }
+    .inner-login-side h2{
+        margin-top: 50px;
+        margin-left: 20%;
+        font-size: 25px;
+        color: black;
+    }
+    .inner-login-side span{
+        color: green;
+    }
+    .privacy{
+        margin-top: 50px;
+        margin-left: 25%;
+        margin-right: 25%;
+        background-color: cadetblue;
+    }
+    .privacy a{
+        margin-top: 90px;
+        margin-left: 25%;
+        text-decoration: none;
+        color: blue;
+    }
+    
+    .terms{
+        padding-top: 100px;
+        
+    }
+    
+    .privacie p{
+       text-align: justify
+    }
+    .team{
+        padding-bottom: 20px;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+    }
+    .team:hover{
+         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    }
+    .team img{
+        width:150px;
+        height:150px;
+        border-radius:50px;
+        margin-left: 40px;
+    }
+    .team ul{
+        margin-top: 10px;
+    }
+    .team ul li{
+        
+        color:teal;
+    }
+    .join{
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.6);
+        height: 60px;
+        background-color: teal;
+    }
+    .join:hover{
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    }
+    .join h5{
+        line-height: 60px;
+        margin-left: 20px;
+        color: white;
+    }
+}
+
+
+
+

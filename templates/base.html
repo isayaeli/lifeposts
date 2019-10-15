@@ -1,0 +1,144 @@
+<html>
+<head>
+    {% block title%}
+    <title>Base</title>
+    {% endblock%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'posts/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'posts/css/main.css'%}">
+    <link rel="stylesheet" href="{% static 'posts/css/all.css'%}">
+    <link rel="stylesheet" href="{% static 'posts/css/emojionearea.min.css'%}">
+    <link rel="icon" href="{% static 'posts/images/logo.png'%}" type="image/icon type">
+</head>
+
+<body>
+    {%block nav%}
+    <div class="nav-bar">
+       <div class="nav-container">
+            <a href="{% url 'home'%}"><img src="{% static 'posts/images/logo.png'%}" alt=""></a>
+            <form action="{% url 'home'%}" method="GET">
+                <input type="text" name="q" id="" placeholder=" Search here">
+                <button type="submit" class="btn btn-success" style="background-color: teal;">
+                    <span><i class=" fa fa-search"></i></span>
+                </button>
+            </form>
+            <ul>
+                <li class="search">
+                    <a href="#">
+                        <span><i class="fas fa-search"></i></span>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'home'%}">
+                        <span><i class="fas fa-home"></i></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'add-info'%}">
+                        <span><i class="far fa-user"></i></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="far fa-envelope"></i></span>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="far fa-bell"></i></span>
+                        <span>Notification</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'password-change' %}">
+                        <span><i class="fa fa-tools"></i></span>
+                        <span>Password Change</span>
+                    </a>
+                </li>
+                <li id="logout">
+                    <a href="/logout">
+                        <span><i class="fas fa-sign-out-alt"></i></span>
+                        <span>logout</span>
+                    </a>
+                </li>
+            </ul>
+       </div>
+    </div>
+    {% endblock nav%}
+    
+    
+    {%block contents%}
+    {% endblock contents%}
+
+    {%block footer%}
+     <footer class="fixed-bottom">
+        <ul>
+            <li>
+                <a href="/">
+                    <span><i class="fa fa-home"></i></span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="/add-info">
+                    <span><i class="far fa-user"></i></span>
+                    <span>Account</span>
+                </a>
+            </li>
+            <li>
+                <a href="/password-change">
+                    <span><i class="fa fa-tools"></i></span>
+                    <span>Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="/logout">
+                    <span><i class="fa fa-sign-out-alt"></i></span>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+     </footer>
+    {% endblock footer%}
+
+
+</body>
+<script src="{% static 'posts/js/jquery.js'%}"></script>
+<script src="{% static 'posts/js/popper.min.js'%}"></script>
+<script src="{% static 'posts/js/bootstrap.min.js'%}"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script src="{% static 'posts/js/main.js'%}"></script>
+<script src="{% static 'posts/js/all.js'%}"></script>
+<script src="{% static 'posts/js/scrollmagic.js'%}"></script>
+<script src="{% static 'posts/js/scrollmagicjquery.js'%}"></script>
+<script src="{% static 'posts/js/emojionearea.min.js'%}"></script>
+
+
+<script>
+    $(document).ready(function(event){
+    $(document).on('click', '#like', function(event){
+        event.preventDefault();
+        var pk = $(this).attr('value');
+        $.ajax({
+            type: 'POST',
+            url:'{% url "likes"%}',
+            data:{'id':pk, 'csrfmiddlewaretoken':'{{csrf_token}}'},
+            dataType:'json',
+            success: function(response){
+                $('#like-section').html(response['form'])
+                console.log($('#like-section').html(response['form']))
+            },
+            errror: function(rs,e){
+                console.log(rs.responseText)
+            }
+
+        });
+    })
+});
+
+</script>
+</html>

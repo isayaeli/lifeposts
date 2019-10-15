@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        {% for results in queryset%}
+         <ul>
+             <li>{{results.user.username}}</li>
+             <li><img src="{% results.image.url%}" alt="" style="height: 200px; width:200px;"></li>
+             <li>{{results.date_joined}}</li>
+         </ul>
+        {%endfor%}
+    </body>
+</html>

@@ -1,0 +1,26 @@
+{% if request.user%}
+<form action="{% url 'likes' %}" method="POST">
+    {% csrf_token %}
+    {{post.likes.count}}
+    {% if is_liked%}
+    <button type="submit" id="like" style="color:red; font-size: 20px;" class="btn btn-primary-outline" name="post_id"
+        value="{{post.id}}">
+        <span><i class="fa fa-heart"></i></span>
+        
+    </button>
+    {% else%}
+    <button type="submit" id="like" style="color:blue; font-size: 20px;" class="btn btn-primary-outline" name="post_id"
+        value="{{post.id}}">
+        <span><i class="far fa-heart"></i></span>
+        
+    </button>
+    {% endif %}
+</form>
+{% endif %}
+
+
+
+
+
+
+

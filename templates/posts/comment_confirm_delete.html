@@ -1,0 +1,177 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block title%}
+<title>Delete Post</title>
+{% endblock title%}
+
+{%block contents%}
+<div class="title">
+    <img src="{% static 'posts/images/logo.png'%}" alt="">
+    <form action="">
+        <input type="text" name="q" id="">
+        <button style="background-color: none;" class="btn btn-dark">
+            <span><i class="fa fa-search"></i></span>
+        </button>
+    </form>
+    <ul>
+        <li class="search">
+            <a href="#">
+                <span><i class="fas fa-envelope"></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span><i class="fas fa-bell"></i></span>
+        </li>
+    </ul>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="aside">
+                <div class="green-color">
+                    <div class="profile-img">
+                        <img src="{{user.profile.image.url}}" alt="null">
+                    </div>
+                </div>
+
+                <div class="username">
+                    <h6>Welcome {{user.username}}</h6>
+                    <a href="{% url 'add-info' %}" type="button" data-toggle="modal" data-target="#exampleModal3">Add
+                        Photo</a>
+                </div>
+                <hr>
+                <div class="friends">
+                    <a href="https://twitter.com/UmmaSoft">Twitter</a>
+                    <a style="color: blue;" href="https://twitter.com/UmmaSoft"><span><i class="fab fa-twitter"></i></span></a>
+                </div>
+                <div class="friends">
+                    <a href="https://www.instagram.com/slim_squid/">Instagram</a>
+                    <a style="color:red;" href="https://www.instagram.com/slim_squid/"><span><i class="fab fa-instagram"></i></span></a>
+                </div>
+
+                <div class="more">
+                    <h7>please be sure to tell friends to connect to this cool social expirience</h7>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="feed">
+                {%if messages%}
+                {% for msg in messages%}
+                {% if msg.tags == 'success'%}
+                <div class="alert alert-success alert-dismissible" id="notify" style="z-index: 3">
+                    {{msg}}
+                </div>
+                {%endif%}
+                {%endfor%}
+                {% endif%}
+                <div class="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="add-post add">
+                                <a href=""><span><i class="fa fa-edit"></i></span> Add Post</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="add-post anchor">
+                                <a type="button" data-toggle="modal" data-target="#exampleModal2">
+                                    <span><i class="fa fa-image"></i></span></a>
+                                <a type="button" data-toggle="modal" data-target="#exampleModal1">
+                                    <span><i class="fa fa-video"></i></span></a>
+                                <a type="button" data-toggle="modal" data-target="#exampleModal">
+                                    <span><i class="fa fa-file"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="who-added-post">
+                        <br>
+                        <div class="the-post">
+                            <form method="POST" class="form-group" enctype="multipart/form-data">
+                                {%csrf_token%}
+                                <div>
+                                    <p>Are you sure you wanna delete your Comment</p>
+                                    <hr>
+                                    <p>{{ comment.contents}}</p>
+                                </div>
+                                <div class="delete-buttons">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <a href="{% url 'post' comment.post.id%}" type="submit" class="btn btn-dark">Cancel</a>
+                                </div>
+                            </form>
+                            <hr>
+                            <ul>
+                                <li><a href=""><span><i class="far fa-thumbs-up"></i></span> like</a></li>
+                                <li><a href=""><span><i class="far fa-comment"></i></span> comment</a></li>
+                                <li><a href=""><span><i class="fa fa-share"></i></span> share</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+            </div>
+        </div>
+        <br><br>
+
+        <div class="col-md-3">
+            <div class="ads">
+                <img src="{% static 'posts/images/add.jfif'%}" alt="">
+                <hr>
+                <div class="links">
+                    <a href="/team">Team</a>
+                    <a href="/privacy-policy">Privacy Terms</a>
+                </div>
+
+                <div class="links">
+                    <a href="">Businesses</a>
+                    <a href="">Advertise</a>
+                </div>
+
+                <div class="links">
+                    <a href="">&copy; allright reserved Lifebook 2019</a>
+                </div>
+                <div class="links">
+                    <a href="">Owned by ummasoft Technologies</a>
+                </div>
+                <br>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Whats about Life</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/add-post/" class="form-group" method="POST">
+                        {%csrf_token%}
+                        <textarea name="post_description" class="form-control"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-dark">Send Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock contents%}

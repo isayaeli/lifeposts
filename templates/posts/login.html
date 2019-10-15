@@ -1,0 +1,63 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block title%}
+ <title>Login</title>
+{% endblock title%}
+
+{% block nav%}
+<div class="nav-bar" id="login-nav">
+    <h1>LifeBook</h1>
+</div>
+{% endblock nav%}
+
+{%block contents%}
+ <div class="row">
+    <div class="col-md-7">
+        <div class=loginForm>
+            <img style="margin-left: 20px;" src="{% static 'posts/images/logo.png'%}" alt="">
+            <h3>Login to lifebook</h3>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'info'%}
+                    <div class="alert alert-success alert-dismissible" id="notify">
+                        {{message}}
+                    </div>
+                    {% elif message.tags == 'error'%}
+                        <div class="alert alert-danger alert-dismissible" id="notify">
+                            {{message}}
+                        </div>
+                    {% endif%}
+                {% endfor%}
+            {% endif%}
+            <form method="POST">
+                {% csrf_token%}
+                {{form.as_p}}
+                <button class="btn btn-dark" type="submit">Login</button>
+                 <input type="checkbox" name="" id="" class="check">
+                 <label for="checkbox">Remember me</label>
+                 <a href="/password-reset">Forgot password?</a>
+            </form>
+            <div class="go-register">
+                <h6>Don't have LifeBook account?.Register<a href="/register"> Here</a> now..</h6>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 login-side">
+        <div class="inner-login-side">
+            <h2><span><i class="fa fa-search"></i></span> Discover New Ideas</h2>
+            <h2><span><i class="fa fa-users"></i></span> Hear what People Talk About It</h2>
+            <h2><span><i class="fa fa-user-plus"></i></span> Icrease Your Network</h2>
+            <h2><span><i class="far fa-comment"></i></span> Join The Conversation</h2>
+        </div>
+        <div class="privacy">
+            <a href="/privacy-policy">Privacy policy and Terms</a>
+        </div>
+    </div>
+ </div>
+
+{% endblock contents%}
+
+{% block footer%}
+{% endblock footer%}

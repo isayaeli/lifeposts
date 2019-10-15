@@ -1,0 +1,137 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block title%}
+<title>Profile</title>
+{% endblock title%}
+
+{%block contents%}
+<div class="title">
+    <img src="{% static 'posts/images/logo.png'%}" alt="">
+    <form action="">
+        <input type="text" name="q" id="">
+        <button style="background-color: none;" class="btn btn-dark">
+            <span><i class="fa fa-search"></i></span>
+        </button>
+    </form>
+    <ul>
+        <li class="search">
+            <a href="#">
+                <span><i class="fas fa-envelope"></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span><i class="fas fa-bell"></i></span>
+        </li>
+    </ul>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="aside">
+                <div class="green-color">
+                    <div class="profile-img">
+                        <img src="{{user.profile.image.url}}" alt="null">
+                    </div>
+                </div>
+
+                <div class="username">
+                    <h6>Welcome {{user.username}}</h6>
+                    <a href="{% url 'add-info' %}" type="button" data-toggle="modal" data-target="#exampleModal3">Add
+                        Photo</a>
+                </div>
+                <hr>
+                <div class="friends">
+                    <a href="https://twitter.com/UmmaSoft">Twitter</a>
+                    <a style="color: blue;" href="https://twitter.com/UmmaSoft"><span><i class="fab fa-twitter"></i></span></a>
+                </div>
+                <div class="friends">
+                    <a href="https://www.instagram.com/slim_squid/">Instagram</a>
+                    <a style="color:red;" href="https://www.instagram.com/slim_squid/"><span><i class="fab fa-instagram"></i></span></a>
+                </div>
+
+                <div class="more">
+                    <h7>please be sure to tell friends to connect to this cool social expirience</h7>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="feed">
+                {%if messages%}
+                {% for msg in messages%}
+                {% if msg.tags == 'success'%}
+                <div class="alert alert-success alert-dismissible" id="notify" style="z-index: 3">
+                    {{msg}}
+                </div>
+                {%endif%}
+                {%endfor%}
+                {% endif%}
+                <div class="post">
+                    <div class="row">
+                       
+                        <div class="col-md-10">
+                            <div class="add-post anchor">
+                                <a href="#">Edit Your Post Below
+                                <span class="mt-2 ml-2"><i class="fa fa-arrow-down"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="who-added-post">
+                        <br>
+                        <div class="the-post">
+                            <form method="POST" class="form-group profileForm" enctype="multipart/form-data">
+                                {%csrf_token%}
+                                <fieldset>
+                                    {{form.as_p}}
+                                    {{form1.as_p}}
+
+                                </fieldset>
+                                <button type="submit" class="btn btn-dark">Update</button>
+                            </form>
+                            <hr>
+                            
+                        </div>
+
+                    </div>
+                    <br><br>
+                </div>
+
+            </div>
+        </div>
+        <br><br>
+
+        <div class="col-md-3">
+            <div class="ads">
+                <img src="{% static 'posts/images/add.jfif'%}" alt="">
+                <hr>
+                <div class="links">
+                    <a href="/team">Team</a>
+                    <a href="/privacy-policy">Privacy Terms</a>
+                </div>
+
+                <div class="links">
+                    <a href="">Businesses</a>
+                    <a href="">Advertise</a>
+                </div>
+
+                <div class="links">
+                    <a href="">&copy; allright reserved Lifebook 2019</a>
+                </div>
+                <div class="links">
+                    <a href="">Owned by ummasoft Technologies</a>
+                </div>
+                <br>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock contents%}

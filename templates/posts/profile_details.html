@@ -1,0 +1,174 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block title%}
+<title>{{post.user.username|capfirst}}</title>
+{% endblock title%}
+
+{%block contents%}
+<div class="title">
+    <img src="{% static 'posts/images/logo.png'%}" alt="">
+    <form action="">
+        <input type="text" name="q" id="">
+        <button style="background-color: none;" class="btn btn-dark">
+            <span><i class="fa fa-search"></i></span>
+        </button>
+    </form>
+    <ul>
+        <li class="search">
+            <a href="#">
+                <span><i class="fas fa-envelope"></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span><i class="fas fa-bell"></i></span>
+        </li>
+    </ul>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="aside">
+                <div class="green-color">
+                    <div class="profile-img">
+                        <img src="{{user.profile.image.url}}" alt="null">
+                    </div>
+                </div>
+
+                <div class="username">
+                    <h6>Welcome {{user.username}}</h6>
+                    <a href="{% url 'add-info' %}" type="button" data-toggle="modal" data-target="#exampleModal3">Add
+                        Photo</a>
+                </div>
+                <hr>
+                <div class="friends">
+                    <a href="https://twitter.com/UmmaSoft">Twitter</a>
+                    <a style="color: blue;" href="https://twitter.com/UmmaSoft"><span><i class="fab fa-twitter"></i></span></a>
+                </div>
+                <div class="friends">
+                    <a href="https://www.instagram.com/slim_squid/">Instagram</a>
+                    <a style="color:red;" href="https://www.instagram.com/slim_squid/"><span><i class="fab fa-instagram"></i></span></a>
+                </div>
+
+                <div class="more">
+                    <h7>please be sure to tell friends to connect to this cool social expirience</h7>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="feed">
+                {%if messages%}
+                {% for msg in messages%}
+                {% if msg.tags == 'success'%}
+                <div class="alert alert-success alert-dismissible" id="notify" style="z-index: 3">
+                    {{msg}}
+                </div>
+                {%endif%}
+                {%endfor%}
+                {% endif%}
+                <div class="post">
+                    <div class="row">
+                       
+                        <div class="col-md-10">
+                            <div class="add-post anchor">
+                            <a href="#"><b>{{post.user.username|capfirst}}'s Timeline</b>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="who-added-post">
+                        <br>
+                        <div class="post-contents">
+                            <img src="{{post.user.profile.image.url}}" alt="">
+                            <ul>
+                                <strong>
+                                    <li><a href="">{{post.user.username|capfirst}}</a></li>
+                                </strong>
+                                {% if post.user.profile.work %}
+                                <li>{{post.user.profile.work}}</li>
+                                {% else %}
+                                <li></li>
+                                {% endif %}
+                                <li><b>Date Joined</b> {{post.user.profile.date_join|date:"F d, Y"}}</li>
+                            </ul>
+                        </div>
+                        <hr>
+                        
+                        <p><b>Posts posted  by {{post.user.username}} <span>
+                            <i class="fa fa-arrow-down"></i>
+                        </span></b></p>
+                        <hr>
+                        {% for post in post1 %}
+                        <div class="the-post">
+                            {% if post.post_description%}
+                            <p>{{post.post_description}}</p>
+                            {% endif %}
+                            
+                            {% if post.post_image%}
+                            <img src="{{post.post_image.url}}" alt="">
+                            <br>
+                            {% endif%}
+                            
+                            {% if post.post_video%}
+                            <video width="500" height="300" controls>
+                                <source src="{{post.post_video.url}}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <br>
+                            {% endif%}
+                            <br>
+                            <ul>
+                                <li id="like-section">
+                                    {{post.likes.count}} Like{{post.likes.count|pluralize}}
+                                </li>
+                            
+                                <li><a href="{% url 'post' post.id%}" class="comment-click">
+                                        <span><i class="fa fa-arrow-right"></i></span> More about this post</a>
+                                </li>
+                            </ul>
+                            <br>
+                            <hr>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <br><br>
+                </div>
+
+            </div>
+        </div>
+        <br><br>
+
+        <div class="col-md-3">
+            <div class="ads">
+                <img src="{% static 'posts/images/add.jfif'%}" alt="">
+                <hr>
+                <div class="links">
+                    <a href="/team">Team</a>
+                    <a href="/privacy-policy">Privacy Terms</a>
+                </div>
+
+                <div class="links">
+                    <a href="">Businesses</a>
+                    <a href="">Advertise</a>
+                </div>
+
+                <div class="links">
+                    <a href="">&copy; allright reserved Lifebook 2019</a>
+                </div>
+                <div class="links">
+                    <a href="">Owned by ummasoft Technologies</a>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contents%}
+

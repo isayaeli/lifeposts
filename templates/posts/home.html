@@ -1,0 +1,233 @@
+{% extends 'base.html'%}
+
+{% load static%}
+
+{% block title%}
+<title>Home</title>
+{% endblock title%}
+
+{%block contents%}
+<div class="title">
+    <a href="{% url 'home'%}"><img src="{% static 'posts/images/logo.png'%}" alt=""></a>
+    <form action="">
+        <input type="text" name="q" id="">
+         <button style="background-color: none;" class="btn btn-dark">
+            <span><i class="fa fa-search"></i></span>
+        </button>
+    </form>
+    <ul>
+        <li class="search">
+            <a href="#">
+                <span><i class="fas fa-envelope"></i></span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span><i class="fas fa-bell"></i></span>   
+        </li>
+    </ul>
+
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-3">
+            <div class="aside">
+            <div class="green-color">
+                <div class="profile-img">
+                    <img src="{{user.profile.image.url}}" alt="null">
+                </div>
+            </div>
+            
+            <div class="username">
+                <h6>Welcome {{user.username}}</h6>
+                <a type="button" data-toggle="modal" data-target="#exampleModal3">Add Photo</a>
+            </div>
+            <hr>
+             
+
+            <div class="friends">
+                <a href="https://twitter.com/UmmaSoft">Twitter</a>
+                <a style="color: blue;" href="https://twitter.com/UmmaSoft"><span><i class="fab fa-twitter"></i></span></a>
+            </div>
+            <div class="friends">
+                <a href="https://www.instagram.com/slim_squid/">Instagram</a>
+                <a style="color:red;" href="https://www.instagram.com/slim_squid/"><span><i class="fab fa-instagram"></i></span></a>
+            </div>
+
+            <div class="more">
+                <h7>please be sure to tell friends to connect to this cool social expirience</h7>
+            </div>
+            <br><br>
+            <div class='ad mr-5 mt-3'>
+                
+                <div class="close">
+                    <i class="fa fa-times"></i>
+                </div>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- kodhus demos -->
+                
+                <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+                    data-ad-client="ca-pub-8408356133845039" data-ad-slot="8154430505"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+           <div class="feed">
+
+               <div class="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="add-post add">
+                                <a style="color: teal;" type="button" data-toggle="modal" data-target="#exampleModal"><span><i class="fa fa-edit"></i></span> Add Post</a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="add-post anchor">
+                                <a href="/add-photo" type="button">
+                                    <span><i class="fa fa-image"></i></span></a>
+                                <a href="/add-video" type="button">
+                                    <span><i class="fa fa-video"></i></span></a>
+                                <a style="color: teal;" type="button" data-toggle="modal" data-target="#exampleModal">
+                                <span><i class="far fa-newspaper"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                      
+                    {% for post in posts%}
+                    <div class="who-added-post">
+                        <br>
+                        <p><strong>{{post.likes.count}}</strong> people were engaged in this post</p>
+                        <hr>
+                        <div class="post-contents">
+                            <img src="{{post.user.profile.image.url}}" alt="">
+                             <ul>
+                                <strong><li><a href="{% url 'profile-info' post.id%}">{{post.user|capfirst}}</a></li></strong>
+                                {% if post.user.profile.work%}
+                                <li>{{post.user.profile.work}}</li>
+                                {% else %}
+                                <li></li>
+                                {% endif %}
+                                <!-- <li>{{post.updated|date:"F d, Y"}}</li> -->
+                                <li>{{post.published}}</li>
+                             </ul>
+                            {% if request.user == post.user%}
+                             <a style="color: teal;" href="{% url 'update-post' post.id%}" class="ml-5">
+                                 <span><i class="fa fa-edit"></i></span>
+                             </a>
+                            <a style="color: teal;" href="{% url 'delete-post' post.id%}" class="ml-5">
+                                <span><i class="fa fa-trash"></i></span>
+                            </a>
+                            {% endif %}
+                         
+                        </div>
+                        <div class="the-post">
+                            {% if post.post_description%}
+                            <p >{{post.post_description}}</p>
+                             {% endif %}
+
+                            {% if post.post_image%}
+                                <img src="{{post.post_image.url}}" alt="">
+                            {% endif%}
+
+                            {% if post.post_video%}
+                                <video width="500" height="300" controls id="vid">
+                                    <source src="{{post.post_video.url}}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            {% endif%}
+                            <hr>
+                            <ul>
+                                <li id="like-section">
+                                    {{post.likes.count}} Like{{post.likes.count|pluralize}}
+                                </li>
+
+                                <li><a href="{% url 'post' post.id%}" class="comment-click">
+                                    <span><i class="fa fa-arrow-right"></i></span> More about this post</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% empty%}
+                    <br>
+                    <div class="alert alert-info">
+                        No results for <b>{{request.GET.q}}</b> please input the correct seach keyword
+                    </div>
+                    {% endfor%}
+                    <br><br>
+               </div>
+           </div>
+        </div>
+        <br><br>
+        
+        <div class="col-md-3">
+            
+            <div class="ads">
+                <img src="{% static 'posts/images/add.jfif'%}" alt="">
+                <hr>
+                <div class="links">
+                    <a href="/team">Team</a>
+                    <a href="/privacy-policy">Privacy Terms</a>
+                </div>
+            
+                <div class="links">
+                    <a href="">Businesses</a>
+                    <a href="">Advertise</a>
+                </div>
+
+                <div class="links">
+                    <a href="">&copy; allright reserved Lifebook 2019</a>
+                </div>
+                <div class="links">
+                    <a href="">Owned by ummasoft Technologies</a>
+                </div>
+                <div class='ad mt-5 ml-5'>
+                    
+                    <div class="close">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- kodhus demos -->
+                
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px"
+                        data-ad-client="ca-pub-8408356133845039" data-ad-slot="8154430505"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Whats about Life</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/add-post/" class="form-group" method="POST">
+            {%csrf_token%}
+            <textarea name="post_description" class="form-control" id="mytext"></textarea>
+            <br>
+            <button type="submit" class="btn btn-dark">Send Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>  
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+{% endblock contents%}
